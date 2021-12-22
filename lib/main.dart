@@ -1,7 +1,10 @@
 import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+
+import 'package:lojavirtual/screens/base_screen.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,14 +22,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Loja Virtual',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const Scaffold(
-          backgroundColor: Colors.white,
-          body: const Center(
-            child: Text('Teste'),
-          )),
+      home: BaseScreen(),
     );
   }
 }
