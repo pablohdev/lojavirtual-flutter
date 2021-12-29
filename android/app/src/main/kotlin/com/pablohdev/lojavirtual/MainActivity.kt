@@ -1,4 +1,4 @@
-package com.pablohdev.lojavirtual.lojavirtual
+package com.pablohdev.lojavirtual
 
 import io.flutter.embedding.android.FlutterActivity
 

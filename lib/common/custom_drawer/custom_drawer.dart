@@ -8,13 +8,7 @@ class CustomDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: ListView(
-        children: <Widget>[
-          const DrawerHeader(
-            decoration: BoxDecoration(
-              color: Colors.blue,
-            ),
-            child: Text('Drawer Header'),
-          ),
+        children: const <Widget>[
           DrawerTile(iconData: Icons.home, title: 'Início', page: 0),
           DrawerTile(iconData: Icons.list, title: 'Produto', page: 1),
           DrawerTile(

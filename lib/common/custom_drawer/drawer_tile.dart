@@ -3,11 +3,12 @@ import 'package:provider/provider.dart';
 import 'package:lojavirtual/models/page_manager.dart';
 
 class DrawerTile extends StatelessWidget {
-  DrawerTile({
+  const DrawerTile({
+    Key? key,
     required this.iconData,
     required this.title,
     required this.page,
-  });
+  }) : super(key: key);
 
   final IconData iconData;
   final String title;
@@ -16,6 +17,7 @@ class DrawerTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final int currentPage = context.watch<PageManager>().page;
+    final Color primaryColor = Theme.of(context).primaryColor;
 
     return InkWell(
       onTap: () {
@@ -30,13 +32,13 @@ class DrawerTile extends StatelessWidget {
               child: Icon(
                 iconData,
                 size: 32,
-                color: currentPage == page ? Colors.red : Colors.grey[700],
+                color: currentPage == page ? primaryColor : Colors.grey[700],
               ),
             ),
             Text(title,
                 style: TextStyle(
                   fontSize: 16,
-                  color: currentPage == page ? Colors.red : Colors.grey[700],
+                  color: currentPage == page ? primaryColor : Colors.grey[700],
                 ))
           ],
         ),
